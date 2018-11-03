@@ -6,13 +6,62 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>register</ion-title>
-  </ion-navbar>
+<ion-navbar>
+  <ion-title>Register</ion-title>
+</ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-row class="logo-row">
+    <ion-col></ion-col>
+    <ion-col width-67>
+      <img src="http://www.shim-icacs2018.org/key4register/images/client/592/images/Icones/signup-icon.png"/></ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+  <div class="login-box">
+
+    <ion-list >
+
+      <ion-item>
+        <ion-label floating>EMail Id</ion-label>
+        <ion-input  type="text"  #username ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>First Name</ion-label>
+        <ion-input  type="text" #firstname ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Last Name</ion-label>
+        <ion-input  type="text" #lastname ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Gender</ion-label>
+        <ion-input  type="text" #gender ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Age</ion-label>
+        <ion-input  type="text" #age ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input  type="password" #password ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Confirm Password</ion-label>
+        <ion-input  type="password"  #confirmPwd ></ion-input>
+      </ion-item>
+    </ion-list>
+
+  </div>
+  <div id="homebuttons">
+    <button ion-button   type="submit" (click)="register()" round>Register</button>
+    <button ion-button   type="submit" (click)="login()" round>Login</button></div>
 
 </ion-content>
