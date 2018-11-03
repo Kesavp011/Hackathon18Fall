@@ -4,35 +4,35 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-//var indexRouter = require('./routes/index');
-//var usersRouter = require('./routes/users');
+const db = require('mongoose');
 var cors = require('cors');
+
+/*//Rest API's
+require('./controllers/UMS/index')(app);
+require('./controllers/external/index')(app);*/
+
+let registartion = require('./model/registration');
+
+let db_check = db.connect('mongodb://hackaroo:hackaroo123@ds151293.mlab.com:51293/hackaroo',{ useNewUrlParser: true });
+db_check.then((result)=>{
+    console.log("DB connection is established !");
+}).catch((error)=>{
+    console.log("DB connection failed !.");
+})
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
-app.use(cors);
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'dist')));
-
-//Rest API's
-require('./controllers/UMS/index')(app);
-require('./controllers/external/index')(app);
-var cors = require('cors');
 app.use(cors());
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", "POST");
-    res.header("Access-Control-Allow-Headers", "Content-Type");
-    next();
-});
+
+require('./routes/registration')(app, db);
 
 // error handler
 app.use(function(err, req, res, next) {
