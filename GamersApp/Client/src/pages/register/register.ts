@@ -38,7 +38,6 @@ export class RegisterPage {
     }
 
     if (validate == true){
-      console.log('Enter to server call')
       this.url = 'http://127.0.0.1:3000/user/create';
         this.http.post(this.url,{
           email:this.emailId.value,

@@ -27,4 +27,21 @@ module.exports = function (app, db) {
             }
         })
     });
+    app.get('/user/fetch',(req,res) => {
+        let userName = req.query.userName;
+        registration_details.find({user_name:userName}).exec((err, registration) => {
+            if (!err) {
+                res.send({
+                    result: "Success",
+                    data: registration,
+                });
+            } else {
+                res.send({
+                    result: "Failure",
+                    message: "Error in creating UserDetails",
+                    error: err
+                });
+            }
+        })
+    });
 };
