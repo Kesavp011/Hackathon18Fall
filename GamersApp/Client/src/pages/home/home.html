@@ -1,17 +1,59 @@
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+    <div class="flb">
+      <div class="Aligner-item Aligner-item--top"></div>
+      <img src="../../assets/imgs/5fc8b569-d76f-4d5d-809a-6dc6968e28f7.gif">
+      <div class="Aligner-item Aligner-item--bottom"></div>
+    </div>
+  </div>
+
 <ion-header>
-  <ion-navbar style="text-align: center">
+  <ion-navbar style="text-align: center" color="dark">
     <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-item>
-    <ion-label></ion-label>
-    <ion-select [(ngModel)]="gender">
-      <ion-option value="f">Female</ion-option>
-      <ion-option value="m">Male</ion-option>
+    <ion-label>Narrow by Tag</ion-label>
+    <ion-select [(ngModel)]="category" >
+      <ion-option value="action">Action</ion-option>
+      <ion-option value="adventure">Adventure</ion-option>
+      <ion-option value="arcade">Arcade</ion-option>
+      <ion-option value="card Game">Board</ion-option>
+      <ion-option value="card Game">Card</ion-option>
+      <ion-option value="casual">Casual</ion-option>
+      <ion-option value="education">Education</ion-option>
+      <ion-option value="exploration">Exploration</ion-option>
+      <ion-option value="fantasy">Fantasy</ion-option>
+      <ion-option value="movies">Movies</ion-option>
+      <ion-option value="puzzle">Puzzle</ion-option>
+      <ion-option value="racing">Racing</ion-option>
+      <ion-option value="simulation">Simulation</ion-option>
+      <ion-option value="science fiction">Science Fiction</ion-option>
+      <ion-option value="sports">Sports</ion-option>
+      <ion-option value="stratergy">Stratergy</ion-option>
     </ion-select>
   </ion-item>
-
+  <ion-item>
+    <ion-label>Narrow by Number of Player</ion-label>
+    <ion-select>
+      <ion-option value="single player">Single Player</ion-option>
+      <ion-option value="multiple player">Multiple Player</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Narrow by Ratinng</ion-label>
+    <ion-select>
+      <ion-option value="1">1</ion-option>
+      <ion-option value="2">2</ion-option>
+      <ion-option value="3">3</ion-option>
+      <ion-option value="4">4</ion-option>
+      <ion-option value="5">5</ion-option>
+      <ion-option value="6">6</ion-option>
+      <ion-option value="7">7</ion-option>
+      <ion-option value="8">8</ion-option>
+      <ion-option value="9+">9+</ion-option>
+    </ion-select>
+  </ion-item>
 
 </ion-content>
