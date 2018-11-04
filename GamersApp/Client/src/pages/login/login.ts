@@ -35,7 +35,6 @@ export class LoginPage {
           console.log(res);
           console.log("length is"+res.data.length);
           if(res.data.length != 0) {
-            var document = [];
             for (this.i = 0; this.i < res.data.length; this.i++) {
               if (res.data[this.i].password == this.pwd.value) {
                 console.log("matched");
