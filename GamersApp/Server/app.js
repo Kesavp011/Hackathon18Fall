@@ -12,6 +12,9 @@ require('./controllers/UMS/index')(app);
 require('./controllers/external/index')(app);*/
 
 let registartion = require('./model/registration');
+let Data = require('./model/gamedata');
+
+
 
 let db_check = db.connect('mongodb://hackaroo:hackaroo123@ds151293.mlab.com:51293/hackaroo',{ useNewUrlParser: true });
 db_check.then((result)=>{
@@ -33,6 +36,8 @@ app.use(cors());
 
 
 require('./routes/registration')(app, db);
+require('./routes/Data')(app, db);
+
 
 // error handler
 app.use(function(err, req, res, next) {
