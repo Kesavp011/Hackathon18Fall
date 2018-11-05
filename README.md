@@ -1,7 +1,7 @@
 # Hackathon18Fall
 
 # Gamer AI
-This is Ionic Application to retrive the game details by giving count of Players and Category of the game
+This is an Iconic Application to retrive the game details by giving count of Players and Category of the game
 
 # Team Details:
 
