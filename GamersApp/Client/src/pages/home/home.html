@@ -45,4 +45,28 @@
   <div style="text-align: center">
   <button ion-button medium type="submit" (click)="search()" round >search</button>
   </div>
+
+  <div *ngFor="let result of results"  >
+      <ion-card>
+          <ion-card-header >
+              <h4 style="color: white" >{{result.names}}</h4>
+          </ion-card-header>
+          <ion-card-content >
+              <img src="{{result.image_url}}" alt="">
+            
+                  <p style="color: white">
+                          <strong>Players above age:</strong>
+                          {{result.age}}
+                        </p>
+                        <p style="color: white">
+                          <strong>
+                          Average Ratting:
+                        </strong>
+                        {{result.avg_rating}}
+                        </p>
+                        <a href="{{result.bgg_url}}">Tap to Play</a>
+          </ion-card-content>
+        </ion-card>
+</div>
+
 </ion-content>

@@ -13,6 +13,7 @@ export class HomePage {
   @ViewChild('playercount') count;
   @ViewChild('ratings') rating;
   public url:string
+  public results: Array<{}>
 
   tabBarElement: any;
   splash = true;
@@ -36,8 +37,12 @@ export class HomePage {
         (res:any)=>{
           console.log(res);
           console.log(this.searchtxt.value);
-          var filter=alasql('SELECT * from ? as t1 where t1.min_players=='+this.count.value+'and t1.category LIKE "%'+this.searchtxt.value+'%"',[res]);
+          var filter=alasql('SELECT * from ? as t1 where t1.min_players='+this.count.value+'and t1.category LIKE "%'+this.searchtxt.value+'%"',[res]);
           console.log(filter);
+          this.results = filter;
+          console.log(this.results);
+          // this.results.push(filter);
+          // console.log(this.results);
         }
       );
     }
